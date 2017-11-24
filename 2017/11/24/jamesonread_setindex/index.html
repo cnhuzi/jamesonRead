@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo希尔斯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#如何将插件设为首页，实现输入网址后自动打开插件首页discuz系统核心文件限定了移动端首页只能是forum.php，如果设置了其他模块比如插件（plugin.php等）为首页，当移动端上打开插件页面时，dz系统会强制跳转到forum.php即论坛首页面，造成无法在移动端打开插件。 所以如果想将小说中心设为首页，并保证">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo希尔斯">
+<meta property="og:url" content="http://ceshi.com/2017/11/24/jamesonread_setindex/index.html">
+<meta property="og:site_name" content="Hexo希尔斯">
+<meta property="og:description" content="#如何将插件设为首页，实现输入网址后自动打开插件首页discuz系统核心文件限定了移动端首页只能是forum.php，如果设置了其他模块比如插件（plugin.php等）为首页，当移动端上打开插件页面时，dz系统会强制跳转到forum.php即论坛首页面，造成无法在移动端打开插件。 所以如果想将小说中心设为首页，并保证手机端可正常打开，必须按照下述方法修改。这可能是dz的bug，也可能是dz有意设">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://ceshi.com/2017/11/24/jamesonread_setindex/images/editindex1.jpg">
+<meta property="og:image" content="http://ceshi.com/2017/11/24/jamesonread_setindex/images/editindex2.jpg">
+<meta property="og:image" content="http://ceshi.com/2017/11/24/jamesonread_setindex/images/editindex3.jpg">
+<meta property="og:updated_time" content="2017-11-18T08:33:41.797Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo希尔斯">
+<meta name="twitter:description" content="#如何将插件设为首页，实现输入网址后自动打开插件首页discuz系统核心文件限定了移动端首页只能是forum.php，如果设置了其他模块比如插件（plugin.php等）为首页，当移动端上打开插件页面时，dz系统会强制跳转到forum.php即论坛首页面，造成无法在移动端打开插件。 所以如果想将小说中心设为首页，并保证手机端可正常打开，必须按照下述方法修改。这可能是dz的bug，也可能是dz有意设">
+<meta name="twitter:image" content="http://ceshi.com/2017/11/24/jamesonread_setindex/images/editindex1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo希尔斯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo希尔斯</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">测试下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ceshi.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jamesonread_setindex" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/24/jamesonread_setindex/" class="article-date">
+  <time datetime="2017-11-24T13:08:43.752Z" itemprop="datePublished">2017-11-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="如何将插件设为首页，实现输入网址后自动打开插件首页"><a href="#如何将插件设为首页，实现输入网址后自动打开插件首页" class="headerlink" title="#如何将插件设为首页，实现输入网址后自动打开插件首页"></a>#如何将插件设为首页，实现输入网址后自动打开插件首页</h2><p>discuz系统核心文件限定了移动端首页<strong>只能是</strong>forum.php，如果设置了其他模块比如插件（plugin.php等）为首页，当移动端上打开插件页面时，dz系统会强制跳转到forum.php即论坛首页面，造成无法在移动端打开插件。</p>
+<p>所以如果想将小说中心设为首页，并保证手机端可正常打开，必须按照下述方法修改。<br><strong>这可能是dz的bug，也可能是dz有意设计。</strong></p>
+<p>##有两种方法可以实现</p>
+<p><strong>第一种方法：</strong><br>网站后台-界面-导航设置-小说中心-设为首页，并打开网站根目录下 source/class/discuz/discuz_application.php<br>找到第778行左右，将 </p>
+<pre><code>dheader(&quot;location:$mobileurl&quot;);
+</code></pre><p>替换为 </p>
+<pre><code>// dheader(&quot;location:$mobileurl&quot;);
+</code></pre><p><img src="./images/editindex1.jpg" alt=""></p>
+<p><strong>优点：</strong>简单，无需配置服务器设置<br><strong>缺点：</strong><br>1.网址带plugin.php尾巴；<br>2.此种设置方式对dz手机端无效，手机上首页仍然是forum.php即论坛首页，</p>
+<hr>
+<hr>
+<p><strong>第二种方法：</strong><br>1、仍然需要修改 <strong>source/class/discuz/discuz_application.php </strong> 这个文件，找到第778行左右，将 </p>
+<pre><code>dheader(&quot;location:$mobileurl&quot;);
+</code></pre><p>替换为 </p>
+<pre><code>// dheader(&quot;location:$mobileurl&quot;);
+</code></pre><p>2、再到你的服务器管理界面中，比如windows上IIS或者Linux管理面板中，在默认文档设置中加一个默认首页 <strong>plugin.php</strong> ，并移动到第一个位置</p>
+<p><img src="./images/editindex2.jpg" alt=""></p>
+<p>3、然后到网站根目录下，打开plugin.php文件，在第23行附近，将</p>
+<pre><code>if(!empty($_GET[&apos;id&apos;])) {
+    list($identifier, $module) = explode(&apos;:&apos;, $_GET[&apos;id&apos;]);
+    $module = $module !== NULL ? $module : $identifier;
+} else {
+    showmessage(&apos;plugin_nonexistence&apos;);
+}
+</code></pre><p>替换为</p>
+<pre><code>if(!empty($_GET[&apos;id&apos;])) {
+    list($identifier, $module) = explode(&apos;:&apos;, $_GET[&apos;id&apos;]);
+    $module = $module !== NULL ? $module : $identifier;
+} else {
+    $_GET[&apos;id&apos;] = $identifier = $module = &apos;jameson_read&apos;;
+}
+</code></pre><p><img src="./images/editindex3.jpg" alt=""></p>
+<p><strong>优点：</strong>网址无plugin.php尾巴，手机版输入网址后直接显示插件页面<br><strong>缺点：</strong>需要有权限操作服务器，更改服务器配置。网站后台-界面-导航 中首页设置将失效，无论如何设置，网站首页始终会是插件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ceshi.com/2017/11/24/jamesonread_setindex/" data-id="cjadxbsqw000dlgufw2v4bffd" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/24/jamesonread_shezhi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/24/jamesonread_jihuarenwu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/24/专题和头条/">专题和头条</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/24/ce/">ce</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/24/jamesonread_yuyin/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/24/jamesonread_xuanmuban/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/24/jamesonread_weijingtai/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
